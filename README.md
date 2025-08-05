@@ -10,7 +10,7 @@
 - **모델 아키텍처**:
     - Convolutional Neural Network (CNN)
     - Vision Transformer (ViT)
-    - Adaboost (클래식 머신러닝 모델)
+    - Random Forest (클래식 머신러닝 모델)
 - **학습**: PyTorch를 사용하며, 이미지 데이터에 대한 데이터 증강(Data Augmentation) 기법 적용.
 - **성능 평가**: 정확도(Accuracy), 혼동 행렬(Confusion Matrix), ROC 커브 등을 활용하여 모델 성능 분석.
 
