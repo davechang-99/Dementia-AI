@@ -23,9 +23,8 @@
    ## 📂 Google Drive
 
 - [프로젝트 데이터 및 파일 폴더 바로가기](https://drive.google.com/drive/folders/1WHmpintD0IiBifRBx2IPOTMS5_rPo8bH?usp=drive_link)
-
 4. 각 셀을 순서대로 실행
-5. https://drive.google.com/drive/folders/1WHmpintD0IiBifRBx2IPOTMS5_rPo8bH?usp=sharing
+
 
 ---
 
