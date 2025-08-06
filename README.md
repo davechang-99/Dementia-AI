@@ -1,20 +1,76 @@
-# Audio Classification for Dementia Detection
+# Dementia Pre-detection AI: Mel-Spectrogram Voice Classification
 
-## 프로젝트 소개
-이 프로젝트는 오디오 데이터를 '정상(Normal)' 또는 '치매(Dementia)'로 분류하는 머신러닝 모델을 개발합니다. 음성 데이터를 멜-스펙트로그램(Mel-spectrogram) 이미지로 변환하여 딥러닝 모델에 적용하는 방식으로 진행됩니다.
+본 프로젝트는 음성 데이터를 Mel-Spectrogram 이미지로 변환한 후,  
+딥러닝 및 기계학습 기반의 분류 모델(CNN, ViT, RandomForest 등)을 활용하여  
+치매 환자와 정상 노인을 구분하는 인공지능 모델 개발 및 실험을 목표로 합니다.
 
-## 주요 기능 및 기술 스택
-- **데이터 전처리**: `.wav` 형식의 음성 파일을 `.png` 형식의 멜-스펙트로그램 이미지로 변환.
-- **데이터셋**: 'Normal' 및 'Dementia' 클래스로 구성된 훈련 및 검증 데이터셋.
-    - **데이터셋 링크**: [Google Drive Dataset](https://drive.google.com/drive/folders/14w2K2GedTDCQUrcLqzZk6rhBrCFX1uCD?usp=drive_link)
-- **모델 아키텍처**:
-    - Convolutional Neural Network (CNN)
-    - Vision Transformer (ViT)
-    - Adaboost (클래식 머신러닝 모델)
-- **학습**: PyTorch를 사용하며, 이미지 데이터에 대한 데이터 증강(Data Augmentation) 기법 적용.
-- **성능 평가**: 정확도(Accuracy), 혼동 행렬(Confusion Matrix), ROC 커브 등을 활용하여 모델 성능 분석.
+## 📚 주요 특징
+- 음성 파일을 Mel-Spectrogram 이미지로 자동 변환
+- PyTorch, Transformers(Huggingface), scikit-learn 기반 다양한 분류기 지원
+- 성능 비교: CNN, ViT(Vision Transformer), RandomForest
+- 실험 결과 표, 시각화, 혼동행렬, ROC 곡선 등 자동 생성
+- Colab/Jupyter 환경에서 즉시 재현 가능
 
-## 사용법
-1. GitHub 저장소를 클론(Clone)합니다.
-2. 필요한 패키지를 설치합니다.
-3. Jupyter Notebook 파일을 실행하여 데이터 전처리부터 모델 학습 및 평가 과정을 확인할 수 있습니다.
+---
+
+## 🔥 실행 방법
+
+1. **Google Colab에서 실행 권장**  
+   (또는 Jupyter 환경)
+2. 필요한 라이브러리 설치  
+   (Colab의 경우 ipynb 첫 셀에서 자동 설치)
+3. Google Drive에 데이터셋 업로드  
+   (예시 경로: `/content/drive/MyDrive/DATASET/Normal`, `/content/drive/MyDrive/DATASET/Dementia`)
+4. 각 셀을 순서대로 실행
+
+---
+
+## 💾 데이터셋 안내
+
+- 본 프로젝트는 공개 영어권 치매 음성 데이터셋(예: DementiaBank, Pitt Corpus 등)을 예시로 사용하였습니다.
+- 실제 한국어 음성 데이터셋은 공개 DB 부족으로 분석에 활용하지 못하였으며,  
+  연구 확장 시 별도 구축 필요
+- 각 폴더별 `.wav` 파일 형식(정상: `Normal/`, 치매: `Dementia/`)
+
+---
+
+## 🏆 실험 결과 예시
+
+| Model         | Accuracy | Precision | Recall   | F1-Score |   AUC    |
+|---------------|----------|-----------|----------|----------|----------|
+| ViT           | 0.610    | 0.628     | 0.610    | 0.603    | 0.721    |
+| RandomForest  | 0.616    | 0.615     | 0.616    | 0.614    | 0.692    |
+| CNN           | 0.610    | 0.617     | 0.610    | 0.598    | 0.642    |
+
+- ViT가 AUC(0.72)에서 가장 높은 값을 기록
+- 전체적으로 정밀도/재현율/정확도는 유사  
+- 모델별 혼동행렬, ROC 곡선 등 추가 시각화 가능
+
+---
+
+## 📝 주요 파일 구성
+
+- `pre_dectaction_dementia_.ipynb` : 전체 파이프라인 Colab 노트북 (음성→Mel→분류→분석)
+- `README.md` : Github 프로젝트 안내 및 설명
+
+---
+
+## 📈 참고문헌 (APA)
+
+- Breiman, L. (2001). Random forests. *Machine Learning*, 45(1), 5-32.
+- Dosovitskiy, A., Beyer, L., Kolesnikov, A., et al. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. *International Conference on Learning Representations*.
+- Saito, T., & Rehmsmeier, M. (2015). The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. *PLoS One, 10*(3), e0118432.
+
+---
+
+## 👨‍🔬 Contact
+
+- 연구 및 협업 문의: [이메일 또는 Github 아이디]
+
+---
+
+## ❗️ 참고사항
+
+- 본 코드는 공개 음성 데이터셋에 한해 연구 및 교육용으로 제공되며,  
+  상업적/임상적 진단 목적 사용 시 데이터 및 법적 책임은 사용자에게 있음  
+- 한국어 데이터셋 추가 연구 및 적용을 환영합니다.
