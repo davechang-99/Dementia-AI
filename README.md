@@ -20,8 +20,12 @@
 2. 필요한 라이브러리 설치  
    (Colab의 경우 ipynb 첫 셀에서 자동 설치)
 3. Google Drive에 데이터셋 업로드  
-   (예시 경로: `/content/drive/MyDrive/DATASET/Normal`, `/content/drive/MyDrive/DATASET/Dementia`)
+   ## 📂 Google Drive
+
+- [프로젝트 데이터 및 파일 폴더 바로가기](https://drive.google.com/drive/folders/1WHmpintD0IiBifRBx2IPOTMS5_rPo8bH?usp=drive_link)
+
 4. 각 셀을 순서대로 실행
+5. https://drive.google.com/drive/folders/1WHmpintD0IiBifRBx2IPOTMS5_rPo8bH?usp=sharing
 
 ---
 
